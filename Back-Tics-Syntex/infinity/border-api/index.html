@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border-API </title>
+</head>
+<body>
+    
+
+    <p id="demo"></p>
+</body>
+
+<script>
+
+function display(){
+
+fetch("http://www.boredapi.com/api/activity/")
+
+.then(res => res.json())
+.then(data =>{
+
+   document.getElementById('demo').innerHTML = data.activity ; 
+})
+};
+
+display();
+
+setInterval(() => {
+    display();
+
+},1000);
+</script>
+</html>
